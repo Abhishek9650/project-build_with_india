@@ -26,11 +26,11 @@ def main():
     # Prompt the user to choose speech rate
     while True:
         try:
-            speech_rate = int(input("Enter speech rate (100 to 200, default is 150): "))
-            if 100 <= speech_rate <= 200:
+            speech_rate = int(input("Enter speech rate (100 to 400, default is 150): "))
+            if 100 <= speech_rate <= 400:
                 break
             else:
-                print("Speech rate must be between 100 and 200.")
+                print("Speech rate must be between 100 and 400.")
         except ValueError:
             print("Invalid input. Please enter a number.")
 
