@@ -1,10 +1,16 @@
 import pyttsx3
-
+import tkinter as tk
 def main():
     # Open the text file containing the book
-    with open("book1.txt", "r") as book:
-        book_text = book.read()
-
+    from tkinter import filedialo
+    root = tk.TK()
+    root.withdraw() #hide main window
+    file_path = filedialog.askopenfilename(title="Select a File", filetypes=[("Text files", "*.txt"), ("All files", "*.*")])
+    if file_path:
+        with open(file_path, "r") as file:
+            content = file.read()
+    else:
+        print("No file selected.")
     # Initialize the text-to-speech engine
     engine = pyttsx3.init()
 
